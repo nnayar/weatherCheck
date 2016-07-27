@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Weather App</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+
+		<div class="container">
+			<form class="form-inline get-city-weather" role="form">
+				<div class="form-group">
+					<label for="city">What's the Weather like in </label>
+					<input type="city" class="form-control" id="cityInput" placeholder="Enter name of City">
+				</div>
+				<button id="submit" type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+
+		<div class="container">
+		  <h2>Weather Update for my favorite cities</h2>
+		  <table class="table table-hover">
+		    <thead>
+		      <tr>
+		        <th>Maximum Temperature</th>
+		        <th>Average Temperature</th>
+		        <th>Minimum Temperature</th>
+		      </tr>
+		    </thead>
+		    <tbody id="favourites">
+		    	<!-- city weather conditions will be added here dynamically -->
+		    </tbody>
+		  </table>
+		</div>
+
+	<!-- 
+		<div class="container">
+			<h2>Rounded Corners</h2>
+			<p>The .img-rounded class adds rounded corners to an image (not available in IE8):</p>
+			<img src="cinqueterre.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236">
+		</div>
+
+	 -->
+
+		<script id="item-template" type="x-handlebars-template">
+			<tr class ="city-weather-item">
+				<th class='max-temp' id='max-temp'>{{ maxTemp }}</th>
+				<th class='avg-temp' id='avg-temp'>{{ avgTemp }}</th>
+				<th class='min-temp' id='min-temp'>{{ minTemp }}</th>
+			</tr>
+		</script>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="handlebars-v4.0.5.js"></script>
+		<script src="main.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+</html>
