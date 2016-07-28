@@ -34,9 +34,11 @@ app.getWeatherData = function( cityName ){
 	$.ajax({
 		url: app.requestWeatherUrl,
 		success: function( response ){
+			temp.city = cityName;
 			temp.avgTemp = Math.round( response.main.temp-273 );
 			temp.minTemp = Math.round( response.main.temp_min-273 );
 			temp.maxTemp = Math.round( response.main.temp_max-273 );
+			temp.weatherFeelsLike = '';
 			console.log(temp.avgTemp, temp.minTemp, temp.maxTemp);
 			app.createItem( temp );
 		}

@@ -10,7 +10,10 @@
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-
+		<div class="container">
+			<h1> Nitin's Weather App </h1>
+		</div>
+			
 		<div class="container">
 			<form class="form-inline get-city-weather" role="form">
 				<div class="form-group">
@@ -26,9 +29,11 @@
 		  <table class="table table-hover">
 		    <thead>
 		      <tr>
+		        <th>City</th>
 		        <th>Maximum Temperature</th>
 		        <th>Average Temperature</th>
 		        <th>Minimum Temperature</th>
+		        <th>Weather feels like</th>
 		      </tr>
 		    </thead>
 		    <tbody id="favourites">
@@ -48,9 +53,11 @@
 
 		<script id="item-template" type="x-handlebars-template">
 			<tr class ="city-weather-item">
+				<th class='city' id='city'>{{ city }}</th>
 				<th class='max-temp' id='max-temp'>{{ maxTemp }}</th>
 				<th class='avg-temp' id='avg-temp'>{{ avgTemp }}</th>
 				<th class='min-temp' id='min-temp'>{{ minTemp }}</th>
+				<th class='weather-feels-like' id='weather-feels-like'>{{ weatherFeelsLike }}</th>				
 			</tr>
 		</script>
 
